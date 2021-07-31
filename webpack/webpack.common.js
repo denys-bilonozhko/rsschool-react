@@ -38,7 +38,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new ESLintPlugin(),
+    new ESLintPlugin({
+      extensions: ['js', 'jsx'],
+    }),
     new HtmlWebpackPlugin({
       minify: false,
       template: './src/index.html',
