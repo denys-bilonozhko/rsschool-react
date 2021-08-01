@@ -7,8 +7,16 @@ import './App.css';
 const App = () => {
   return (
     <>
-      <SearchBar />
-      <CardsList />
+      <div className="container">
+        <div className="search">
+          <SearchBar />
+        </div>
+      </div>
+      <div className="container">
+        <div className="cards-list">
+          <CardsList />
+        </div>
+      </div>
     </>
   );
 };
