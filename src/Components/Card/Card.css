@@ -1,7 +1,19 @@
 .card {
-  max-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 25%;
+  padding: 25px;
+}
+
+.card__content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  min-height: 250px;
+  padding: 25px;
   border: 1px solid #000;
-  text-align: center;
 }
 
 .card__image {
@@ -20,7 +32,7 @@
 
 .card__button {
   display: block;
-  width: 100px;
+  width: 100%;
   margin: 0 auto;
   border: 1px solid #000;
   color: #fff;
@@ -31,4 +43,28 @@
 
 .card__button:hover {
   background-color: #5a5959;
+}
+
+@media (max-width: 1050px) {
+  .card {
+      flex: 0 1 33.33%;
+  }
+}
+
+@media (max-width: 850px) {
+  .card {
+      flex: 0 1 33.33%;
+  }
+}
+
+@media (max-width: 770px) {
+  .card {
+      flex: 0 1 50%;
+  }
+}
+
+@media (max-width: 430px) {
+  .card {
+      flex: 0 1 100%;
+  }
 }

@@ -1,0 +1,17 @@
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 660px) {
+  .item-list {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 570px) {
+  .cards-list {
+    padding: 0;
+    justify-content: center;
+  }
+}
