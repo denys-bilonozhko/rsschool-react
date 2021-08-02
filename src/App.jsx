@@ -1,23 +1,14 @@
-import React from 'react';
-import SearchBar from './Components/SearchBar/SearchBar';
-import CardsList from './Components/CardsList/CardsList';
+import React, { useState } from 'react';
 
 import './App.css';
+import Form from './Components/Form/Form';
 
 const App = () => {
+  const [formValues, setFormValues] = useState([]);
   return (
-    <>
-      <div className="container">
-        <div className="search">
-          <SearchBar />
-        </div>
-      </div>
-      <div className="container">
-        <div className="cards-list">
-          <CardsList />
-        </div>
-      </div>
-    </>
+    <div>
+      <Form setFormValues={setFormValues} />
+    </div>
   );
 };
 
