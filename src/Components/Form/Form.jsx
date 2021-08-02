@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Form.css';
 
 const Form = ({ setFormValues }) => {
   const [firstName, setFirstName] = useState('');
@@ -48,35 +49,38 @@ const Form = ({ setFormValues }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="firstName">
+    <form className="form" onSubmit={handleSubmit}>
+      <label className="label" htmlFor="firstName">
         <p>Name: {errors?.firstName === '' && <span>No name</span>}</p>
         <input
+          className="text-input"
           type="text"
           name="firstName"
           value={firstName}
           onChange={(event) => setFirstName(event.target.value)}
         />
       </label>
-      <label htmlFor="firstName">
+      <label className="label" htmlFor="firstName">
         Surname:
         <input
+          className="text-input"
           type="text"
           name="lastName"
           value={lastName}
           onChange={(event) => setLastName(event.target.value)}
         />
       </label>
-      <label htmlFor="birthDate">
+      <label className="label" htmlFor="birthDate">
         Birth date:
         <input
+          className="date-input"
           type="date"
           name="birthDate"
           value={birthDate}
           onChange={(event) => setBirthDate(event.target.value)}
         />
       </label>
-      <label htmlFor="gender">
+      <label className="label" htmlFor="gender">
         Gender:
         <select
           name="gender"
@@ -90,9 +94,9 @@ const Form = ({ setFormValues }) => {
           <option>Other</option>
         </select>
       </label>
-      <label htmlFor="agree">
-        <p>Agree {errors?.agree !== undefined && <span>Not checked</span>}</p>
+      <label className="label agree-label" htmlFor="agree">
         <input
+          className="checkbox"
           type="checkbox"
           name="agree"
           checked={agree}
@@ -100,9 +104,10 @@ const Form = ({ setFormValues }) => {
             setAgree((prev) => !prev);
           }}
         />
+        <p>Agree {errors?.agree !== undefined && <span>Not checked</span>}</p>
       </label>
       <div>
-        <input type="submit" value="Send" />
+        <input className="button" type="submit" value="Send" />
       </div>
     </form>
   );
