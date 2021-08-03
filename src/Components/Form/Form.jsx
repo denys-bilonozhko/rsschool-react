@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Switcher from '../Switcher/Switcher';
 import './Form.css';
 
 const Form = ({ setFormValues }) => {
@@ -8,6 +9,7 @@ const Form = ({ setFormValues }) => {
   const [gender, setGender] = useState('Male');
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState({});
+  const [switcher, setSwitcher] = useState(false);
 
   const validate = () => {
     setErrors({});
@@ -31,6 +33,7 @@ const Form = ({ setFormValues }) => {
     setBirthDate('');
     setLastName('');
     setFirstName('');
+    setSwitcher(false);
   };
 
   useEffect(() => {
@@ -42,7 +45,7 @@ const Form = ({ setFormValues }) => {
     if (Object.keys(errors).length === 0) {
       setFormValues((state) => [
         ...state,
-        { firstName, lastName, birthDate, gender, agree },
+        { firstName, lastName, birthDate, gender, agree, switcher },
       ]);
     }
     resetForm();
@@ -94,6 +97,10 @@ const Form = ({ setFormValues }) => {
           <option>Other</option>
         </select>
       </label>
+      <div className="switcher">
+        <span className="switcher-name">Subscribe:</span>
+        <Switcher setSwitcher={setSwitcher} switcher={switcher} />
+      </div>
       <label className="label agree-label" htmlFor="agree">
         <input
           className="checkbox"

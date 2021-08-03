@@ -14,9 +14,6 @@
   margin-bottom: 15px;
 }
 
-.label {
-}
-
 .agree-label {
   display: flex;
   align-items: center;
@@ -32,4 +29,13 @@
   display: block;
   width: 200px;
   margin: 0 auto;
+}
+
+.switcher {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.switcher-name {
+  margin-right: 10px;
 }
