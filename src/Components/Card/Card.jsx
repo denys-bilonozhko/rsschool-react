@@ -1,122 +1,16 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import './Card.css';
 
-const Card = () => {
+const Card = ({ item }) => {
   return (
-    <>
-      <li className="card">
-        <div className="card__content">
-          <img
-            className="card__image"
-            src="https://via.placeholder.com/150"
-            alt=""
-          />
-          <h3 className="card__name">Card Name</h3>
-          <p className="card__author">Author Name</p>
-          <button className="card__button" type="button">
-            View
-          </button>
-        </div>
-      </li>
-      <li className="card">
-        <div className="card__content">
-          <img
-            className="card__image"
-            src="https://via.placeholder.com/150"
-            alt=""
-          />
-          <h3 className="card__name">Card Name</h3>
-          <p className="card__author">Author Name</p>
-          <button className="card__button" type="button">
-            View
-          </button>
-        </div>
-      </li>
-      <li className="card">
-        <div className="card__content">
-          <img
-            className="card__image"
-            src="https://via.placeholder.com/150"
-            alt=""
-          />
-          <h3 className="card__name">Card Name</h3>
-          <p className="card__author">Author Name</p>
-          <button className="card__button" type="button">
-            View
-          </button>
-        </div>
-      </li>
-      <li className="card">
-        <div className="card__content">
-          <img
-            className="card__image"
-            src="https://via.placeholder.com/150"
-            alt=""
-          />
-          <h3 className="card__name">Card Name</h3>
-          <p className="card__author">Author Name</p>
-          <button className="card__button" type="button">
-            View
-          </button>
-        </div>
-      </li>
-      <li className="card">
-        <div className="card__content">
-          <img
-            className="card__image"
-            src="https://via.placeholder.com/150"
-            alt=""
-          />
-          <h3 className="card__name">Card Name</h3>
-          <p className="card__author">Author Name</p>
-          <button className="card__button" type="button">
-            View
-          </button>
-        </div>
-      </li>
-      <li className="card">
-        <div className="card__content">
-          <img
-            className="card__image"
-            src="https://via.placeholder.com/150"
-            alt=""
-          />
-          <h3 className="card__name">Card Name</h3>
-          <p className="card__author">Author Name</p>
-          <button className="card__button" type="button">
-            View
-          </button>
-        </div>
-      </li>
-      <li className="card">
-        <div className="card__content">
-          <img
-            className="card__image"
-            src="https://via.placeholder.com/150"
-            alt=""
-          />
-          <h3 className="card__name">Card Name</h3>
-          <p className="card__author">Author Name</p>
-          <button className="card__button" type="button">
-            View
-          </button>
-        </div>
-      </li>
-      <li className="card">
-        <div className="card__content">
-          <img
-            className="card__image"
-            src="https://via.placeholder.com/150"
-            alt=""
-          />
-          <h3 className="card__name">Card Name</h3>
-          <p className="card__author">Author Name</p>
-          <button className="card__button" type="button">
-            View
-          </button>
-        </div>
-      </li>
-    </>
+    <li className="card">
+      <h3>{item.firstName}</h3>
+      <h4>{item.lastName}</h4>
+      <p>{item.birthDate}</p>
+      <p>{item.gender}</p>
+      <p>{item.switcher ? 'Subscribed' : 'Not subscribed'}</p>
+    </li>
   );
 };
 
