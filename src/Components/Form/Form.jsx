@@ -47,8 +47,8 @@ const Form = ({ setFormValues }) => {
         ...state,
         { firstName, lastName, birthDate, gender, agree, switcher },
       ]);
+      resetForm();
     }
-    resetForm();
   };
 
   return (
