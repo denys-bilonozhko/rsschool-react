@@ -1,12 +1,15 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Card from '../Card/Card';
 import './CardsList.css';
 
-const CardsList = () => {
+const CardsList = ({ data }) => {
   return (
     <>
       <ul className="cards-list">
-        <Card />
+        {data.map((article) => {
+          return <Card key={article.publishedAt} data={article} />;
+        })}
       </ul>
     </>
   );
