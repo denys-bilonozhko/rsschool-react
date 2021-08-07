@@ -108,7 +108,7 @@ const App = () => {
       {isLoading ? (
         <p className="container">Loading...</p>
       ) : (
-        <CardsList data={articles} />
+        <CardsList articles={articles} />
       )}
     </>
   );

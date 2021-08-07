@@ -3,15 +3,19 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ data }) => {
+const Card = ({ article }) => {
   return (
     <>
       <li className="card">
-        <img className="card__image" src={data.urlToImage} alt={data.title} />
+        <img
+          className="card__image"
+          src={article.urlToImage}
+          alt={article.title}
+        />
         <div className="card__content">
-          <h3 className="card__name">{data.title}</h3>
-          <p className="card__author">{data.author}</p>
-          <p>{data.description}</p>
+          <h3 className="card__name">{article.title}</h3>
+          <p className="card__author">{article.author}</p>
+          <p>{article.description}</p>
         </div>
       </li>
     </>

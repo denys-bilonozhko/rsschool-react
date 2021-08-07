@@ -3,12 +3,12 @@ import React from 'react';
 import Card from '../Card/Card';
 import './CardsList.css';
 
-const CardsList = ({ data }) => {
+const CardsList = ({ articles }) => {
   return (
     <>
       <ul className="cards-list">
-        {data.map((article) => {
-          return <Card key={article.publishedAt} data={article} />;
+        {articles.map((article) => {
+          return <Card key={article.publishedAt} article={article} />;
         })}
       </ul>
     </>
