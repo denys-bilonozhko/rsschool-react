@@ -50,10 +50,11 @@ const App = () => {
   return (
     <>
       <div className="container">
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="search">
+        <form className="search" onSubmit={handleSubmit}>
+          <label className="search__label" htmlFor="search">
             Search
             <input
+              className="search__input"
               id="search"
               type="text"
               value={searchValue}
@@ -61,17 +62,24 @@ const App = () => {
               disabled={isLoading}
             />
           </label>
-          <label htmlFor="sort">
+          <label className="search__label" htmlFor="sort">
             Sort by:
-            <select id="sort" name="sort" onChange={sortHandler} value={sortBy}>
+            <select
+              className="search__input"
+              id="sort"
+              name="sort"
+              onChange={sortHandler}
+              value={sortBy}
+            >
               <option value="relevancy">Relevancy</option>
               <option value="popularity">Popularity</option>
               <option value="publishedAt">Date</option>
             </select>
           </label>
-          <label htmlFor="pages">
+          <label className="search__label" htmlFor="pages">
             Result per page:
             <select
+              className="search__input"
               id="pages"
               name="pages"
               onChange={pageSizeHandler}
@@ -82,25 +90,28 @@ const App = () => {
               <option value="40">40</option>
             </select>
           </label>
-          <label htmlFor="page">
+          <label className="search__label" htmlFor="page">
             Page:
             <input
+              className="search__input search__page"
               type="number"
               name="page"
               onChange={pageHandler}
               value={page}
             />
           </label>
-          <button type="submit" disabled={isLoading}>
+          <button className="search__button" type="submit" disabled={isLoading}>
             Search
           </button>
         </form>
 
         {totalResults ? (
-          <span>
-            Current page: {pageCounter}/{Math.ceil(totalResults / 10)}
-            <br /> Total Results: {totalResults}
-          </span>
+          <div className="container info">
+            <p>
+              Current page: {pageCounter}/{Math.ceil(totalResults / 10)}
+            </p>
+            <p>Total Results: {totalResults}</p>
+          </div>
         ) : (
           ''
         )}

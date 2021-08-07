@@ -59,10 +59,29 @@ a {
 }
 
 .search {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
   margin: 0 auto;
   padding: 25px 0;
 }
 
-.cards-list {
-  padding: 25px 0;
+.search__label {
+  margin-right: 15px;
+}
+
+.search__input {
+  margin-left: 10px;
+}
+
+.search__button {
+  width: 100px;
+}
+
+.search__page {
+  width: 60px;
+}
+
+.info {
+  text-align: center;
 }
